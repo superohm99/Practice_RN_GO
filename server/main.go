@@ -89,6 +89,12 @@ func main() {
 		}
 		c.Redirect(http.StatusMovedPermanently, link.OriginalURL)
 	})
+
+	r.GET("/test", func(c *gin.Context) {
+		c.JSON(http.StatusOK, "test success")
+		return
+	})
+
 	r.Run(":8000")
 }
 
